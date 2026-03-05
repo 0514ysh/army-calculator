@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Army Calculator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+
+    <a href="index.html" class="logo">
+        Army Calculator
+    </a>
+
+    <nav class="menu">
+      <a href="saving.html">군적금 계산기</a>
+      <a href="discharge.html">전역일 계산기</a>
+      <a href="#">휴가 계산기</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <h1>전역일 계산기</h1>
+
+    <label>복무 형태</label>
+    <br>
+    <label>
+    <input type="radio" name="service" value="18" data-type="army" checked>
+    육군
+    </label>
+
+    <label>
+    <input type="radio" name="service" value="18" data-type="marine">
+    해병대
+    </label>
+
+    <label>
+    <input type="radio" name="service" value="20" data-type="navy">
+    해군
+    </label>
+
+    <label>
+    <input type="radio" name="service" value="21" data-type="air">
+    공군
+    </label>
+
+    <label>
+    <input type="radio" name="service" value="21" data-type="social">
+    사회복무요원
+    </label>
+
+    <label>
+    <input type="radio" name="service" value="18" data-type="army">
+    상근예비역
+    </label>
+
+    <br><br><br><br>
+
+    <label>입대 날짜</label>
+    <input type="text" id="startDate" placeholder="날짜 선택" autocomplete="off">
+
+    <br><br>
+
+    <button onclick="calc()">전역일 계산</button>
+
+    <div id="resultCard" class="result-card" style="display:none;">
+
+    <div class="result-color-bar" id="resultColor"></div>
+
+    <div class="result-content">
+
+    <div class="result-row">
+      <span>복무 종류</span>
+      <b id="rService"></b>
+    </div>
+
+    <div class="result-row">
+      <span>복무 기간</span>
+      <b id="rMonths"></b>
+    </div>
+
+    <div class="result-row">
+      <span>입대일</span>
+      <b id="rStart"></b>
+    </div>
+
+    <div class="result-row">
+      <span>전역일</span>
+      <b id="rEnd"></b>
+    </div>
+
+    <div class="result-row highlight">
+      <span>D-Day</span>
+      <b id="rDday"></b>
+    </div>
+
+    <div class="progress-box">
+      <div class="progress-bar">
+        <div id="progressFill"></div>
+      </div>
+      <p id="progressText"></p>
+    </div>
+
+  </div>
+
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+<script src="script.js"></script>
+ 
+</body>
+</html>

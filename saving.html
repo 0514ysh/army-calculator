@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Army Calculator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<header>
+  <div class="container">
+
+    <div class="logo">
+      Army Calculator
+    </div>
+
+    <nav class="menu">
+      <a href="saving.html">군적금 계산기</a>
+      <a href="discharge.html">전역일 계산기</a>
+      <a href="#">휴가 계산기</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+    <div class="container">
+
+    <h1>군적금 계산기</h1>
+
+    <label>복무 형태</label>
+    <br>
+    <label>
+    <input type="radio" name="service" value="18" data-type="army" checked>
+    육군
+    </label>
+
+    <label>
+    <input type="radio" name="service" value="18" data-type="marine">
+    해병대
+    </label>
+
+    <label>
+    <input type="radio" name="service" value="20" data-type="navy">
+    해군
+    </label>
+
+    <label>
+    <input type="radio" name="service" value="21" data-type="air">
+    공군
+    </label>
+
+    <label>
+    <input type="radio" name="service" value="21" data-type="social">
+    사회복무요원
+    </label>
+
+    <label>
+    <input type="radio" name="service" value="18" data-type="army">
+    상근예비역
+    </label>
+
+    <br><br><br><br>
+
+    <label>입대 날짜</label>
+    <input type="text" id="startDate" placeholder="날짜 선택" autocomplete="off">
+
+    <br><br>
+
+    <label>월 납입 금액</label>
+
+    <div class="deposit-box">
+
+    <input
+    type="text"
+    id="deposit"
+    value="400,000"
+>
+
+    <span class="won">원</span>
+
+    </div>
+
+    <input
+    type="range"
+    id="depositSlider"
+    min="0"
+    max="1000000"
+    step="5000"
+    value="550000"
+    >
+
+    <div class="slider-scale">
+    <span>0원</span>
+    <span>50만원</span>
+    <span>100만원</span>
+    </div>
+
+    <br><br>
+
+    <button onclick="calcSaving()">계산하기</button>
+
+    <div id="resultCard" class="result-card" style="display:none;">
+
+    <div class="result-content">
+
+        <div class="result-row">
+        <span>월 납입 금액</span>
+        <b id="rDeposit"></b>
+        </div>
+
+        <div class="result-row">
+        <span>총 납입 금액</span>
+        <b id="rTotal"></b>
+        </div>
+
+        <div class="result-row">
+        <span>예상 이자</span>
+        <b id="rInterest"></b>
+        </div>
+
+        <div class="result-row">
+        <span>정부 지원금</span>
+        <b id="rSupport"></b>
+        </div>
+
+        <div class="result-row">
+        <span>전역일</span>
+        <b id="rEnd"></b>
+        </div>
+
+        <div class="result-row total">
+        <span>예상 만기 수령액</span>
+        <b id="rFinal"></b>
+        </div>
+
+    </div>
+
+    </div>
+
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+<script src="script.js"></script>
+ 
+</body>
+</html>
